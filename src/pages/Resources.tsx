@@ -7,13 +7,16 @@ export interface ResourcesProps{
 const Resources: React.FC<ResourcesProps> = (props) => {
     return(
         <main>
-            <h1 style={{color:"white"}}>Resources</h1>
-            <div style={css.content}></div>
+            <h1 style={styles.header}>Resources</h1>
+            <div style={styles.content}></div>
         </main>
     );
 };
 
-const css = {
+const styles = {
+    header: {
+        color: "white"
+    },
     content: {
         width: "95%",
         height: "50vh",

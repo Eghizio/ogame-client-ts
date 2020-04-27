@@ -8,13 +8,13 @@ export interface PrimaryProps{
 
 const Primary: React.FC<PrimaryProps> = ({children, href}) => {
     return(
-        <div style={css.div} onClick={() => <Redirect to={href}/>}>
-            <Link style={css.link} to={href}>{children}</Link>
+        <div style={styles.div} onClick={() => <Redirect to={href}/>}>
+            <Link style={styles.link} to={href}>{children}</Link>
         </div>
     );
 };
 
-const css = {
+const styles = {
     div: {
         width: "110px",
         height: "30px",

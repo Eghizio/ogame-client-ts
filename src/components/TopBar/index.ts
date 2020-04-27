@@ -1,10 +1,11 @@
-import TopTab from "./TopTab";
+import TopBar from "./TopBar";
 import Logo from "./Logo";
 import ResourcesBar from "./ResourcesBar";
 import Officers from "./Officers";
 
+export default TopBar;
+
 export {
-    TopTab,
     Logo,
     ResourcesBar,
     Officers

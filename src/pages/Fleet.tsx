@@ -7,13 +7,16 @@ export interface FleetProps{
 const Fleet: React.FC<FleetProps> = (props) => {
     return(
         <main>
-            <h1 style={{color:"white"}}>Fleet</h1>  
-            <div style={css.content}></div>
+            <h1 style={styles.header}>Fleet</h1>  
+            <div style={styles.content}></div>
         </main>
     );
 };
 
-const css = {
+const styles = {
+    header: {
+        color: "white"
+    },
     content: {
         width: "95%",
         height: "50vh",

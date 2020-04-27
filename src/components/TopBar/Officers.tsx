@@ -39,8 +39,9 @@ const Officers: React.FC<OfficersProps> = (props) => {
     );
 };
 
-// const styles = {
+// eslint-disable-next-line
+const styles = {
 
-// };
+};
 
 export default Officers;

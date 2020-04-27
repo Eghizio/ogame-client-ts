@@ -1,7 +1,7 @@
 import React from 'react';
 import Planet from './Planet';
 
-interface PlanetTabProps{
+interface PlanetBarProps{
 
 }
 
@@ -12,16 +12,16 @@ const planets: {name:string, coords: number[], id:number, moon:{name:string, id:
     { name: "Planet 3", coords: [1,284,8], id: 3, moon: { name: "", id: 3} },
 ];
 
-const PlanetTab: React.FC<PlanetTabProps> = (props) => {
+const PlanetBar: React.FC<PlanetBarProps> = (props) => {
     return(
-        <aside style={css.aside}>
-            <div style={css.colonised}>{planets.length}/{maxPlanets} Planets</div>
-            {planets.map(p => <Planet key={p.id} data={p} />)}
+        <aside style={styles.aside}>
+            <div style={styles.colonised}>{planets.length}/{maxPlanets} Planets</div>
+            {planets.map(planet => <Planet key={planet.id} name={planet.name} coords={planet.coords} id={planet.id} moon={planet.moon}/>)}
         </aside>
     );
 };
 
-const css = {
+const styles = {
     aside: {
         width: "120px",
         padding: "15px",
@@ -34,4 +34,4 @@ const css = {
     }
 };
 
-export default PlanetTab;
+export default PlanetBar;

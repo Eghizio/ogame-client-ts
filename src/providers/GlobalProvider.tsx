@@ -22,7 +22,6 @@ const GlobalProvider: React.FC<GlobalProviderProps> = ({children}) => {
         }
     };
 
-
     return (
         <GlobalContext.Provider value={null}>
             {children}

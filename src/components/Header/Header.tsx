@@ -17,26 +17,25 @@ const Header: React.FC<HeaderProps> = (props) => {
     
     
     return(
-        <header style={css.header}>
-            <span>Player: <Link style={css.link} to="/">{player.name}</Link></span>
+        <header style={styles.header}>
+            <span>Player: <Link style={styles.link} to="/">{player.name}</Link></span>
             <span>
-                <ul style={css.ul}>
-                    <li style={css.li}><Link style={css.link} to="/">Stats</Link>({player.rank})</li>
-                    <li style={css.li}><Link style={css.link} to="/">Notes</Link></li>
-                    <li style={css.li}><Link style={css.link} to="/">Friends</Link></li>
-                    <li style={css.li}><Link style={css.link} to="/">Search</Link></li>
-                    <li style={css.li}><Link style={css.link} to="/">Settings</Link></li>
-                    <li style={css.li}><Link style={css.link} to="/">Support</Link></li>
-                    <li style={css.li}><Link style={css.link} to="/">Logout</Link></li>
+                <ul style={styles.ul}>
+                    <li style={styles.li}><Link style={styles.link} to="/">Stats</Link>({player.rank})</li>
+                    <li style={styles.li}><Link style={styles.link} to="/">Notes</Link></li>
+                    <li style={styles.li}><Link style={styles.link} to="/">Friends</Link></li>
+                    <li style={styles.li}><Link style={styles.link} to="/">Search</Link></li>
+                    <li style={styles.li}><Link style={styles.link} to="/">Settings</Link></li>
+                    <li style={styles.li}><Link style={styles.link} to="/">Support</Link></li>
+                    <li style={styles.li}><Link style={styles.link} to="/">Logout</Link></li>
                 </ul>
             </span>
-            {/* got to move it aside so the links will be centered */}
             <Clock/>
         </header>
     );
 };
 
-const css = {
+const styles = {
     header: {
         width: "80%",
         padding: "0 10%",

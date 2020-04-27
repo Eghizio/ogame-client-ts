@@ -3,11 +3,11 @@ import Logo from "./Logo";
 import Resources from "./ResourcesBar";
 import Officers from "./Officers";
 
-export interface TopTabProps{
+export interface TopBarProps{
 
 }
 
-const TopTab: React.FC<TopTabProps> = (props) => {
+const TopBar: React.FC<TopBarProps> = (props) => {
     return (
         <div style={styles.container}>
             <Logo/>
@@ -23,4 +23,4 @@ const styles = {
     }
 };
 
-export default TopTab;
+export default TopBar;

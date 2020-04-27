@@ -90,8 +90,9 @@ const ResourcesBar: React.FC<ResourcesBarProps> = (props) => {
     );
 };
 
-// const styles = {
+// eslint-disable-next-line
+const styles = {
 
-// };
+};
 
 export default ResourcesBar;

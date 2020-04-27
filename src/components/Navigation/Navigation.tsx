@@ -20,9 +20,9 @@ const gameEvent: {name: string, endsAt: Date} = { name: "Moon 100%", endsAt: new
 
 const Navigation: React.FC = (props) => {
     return(
-        <div style={css.div}>
+        <div style={styles.div}>
             <nav>
-                <ul style={css.ul}>
+                <ul style={styles.ul}>
                     {navigation.map((n, i) => <Item item={n} key={i}></Item>)}
                 </ul>
             </nav>
@@ -34,7 +34,7 @@ const Navigation: React.FC = (props) => {
     );
 };
 
-const css = {
+const styles = {
     div : {
         width: "180px",
         textAlign: "center" as const,

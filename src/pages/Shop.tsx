@@ -7,13 +7,16 @@ export interface ShopProps{
 const Shop: React.FC<ShopProps> = (props) => {
     return(
         <main>
-            <h1 style={{color:"white"}}>Shop</h1>
-            <div style={css.content}></div>
+            <h1 style={styles.header}>Shop</h1>
+            <div style={styles.content}></div>
         </main>
     );
 };
 
-const css = {
+const styles = {
+    header: {
+        color: "white"
+    },
     content: {
         width: "95%",
         height: "50vh",

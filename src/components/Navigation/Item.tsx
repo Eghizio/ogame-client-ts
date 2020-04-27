@@ -13,14 +13,14 @@ export interface ItemProps{
 
 const Item: React.FC<ItemProps> = ({item:{primary, alt}}) => {
     return(
-        <li style={css.li}>
+        <li style={styles.li}>
             <Primary href={primary.href}>{primary.children}</Primary>
             <Alt href={alt.href}>{alt.children}</Alt>
         </li>
     );
 };
 
-const css = {
+const styles = {
     li: {
         display: "inline-flex",
         margin: "5px",

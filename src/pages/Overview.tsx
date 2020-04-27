@@ -6,16 +6,16 @@ export interface OverviewProps{
 
 const Overview: React.FC<OverviewProps> = (props) => {
     return(
-        <main style={css.main}>
-            <h1 style={{color:"white"}}>Overview</h1>
-            <div style={css.content}></div>
+        <main>
+            <h1 style={styles.header}>Overview</h1>
+            <div style={styles.content}></div>
         </main>
     );
 };
 
-const css = {
-    main: {
-        
+const styles = {
+    header: {
+        color: "white"
     },
     content: {
         width: "95%",

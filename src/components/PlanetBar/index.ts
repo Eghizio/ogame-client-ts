@@ -1,11 +1,11 @@
-import PlanetTab from "./PlanetTab";
+import PlanetBar from "./PlanetBar";
 import Planet from "./Planet";
 import Moon from "./Moon";
 
-export default PlanetTab;
+export default PlanetBar;
 
 export {
-    PlanetTab,
+    PlanetBar,
     Planet,
     Moon
 };

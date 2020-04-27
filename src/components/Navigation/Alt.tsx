@@ -9,15 +9,15 @@ export interface AltProps{
 
 const Alt: React.FC<AltProps> = ({ href, children:emoji}) => {
     return(
-        <div style={css.div}>
-            <Link style={css.link} to={href}>
+        <div style={styles.div}>
+            <Link style={styles.link} to={href}>
                 <Emoji label="Alt">{emoji!==""? emoji:"ℹ️"}</Emoji>
             </Link>
         </div>
     );
 };
 
-const css = {
+const styles = {
     div: {
         width: "30px",
         height: "30px",

@@ -1,14 +1,15 @@
 import Header from "./Header";
+import TopBar from "./TopBar";
 import Navigation from "./Navigation";
-import PlanetTab from "./PlanetTab";
-import Advertisment from "./Advertisment";
+import PlanetBar from "./PlanetBar";
+import Advertisement from "./Advertisement";
 import Emoji from "./Emoji";
-
 
 export {
     Header,
+    TopBar,
     Navigation,
-    PlanetTab,
-    Advertisment,
+    PlanetBar,
+    Advertisement,
     Emoji
 };

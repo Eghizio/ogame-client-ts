@@ -7,13 +7,16 @@ export interface GalaxyProps{
 const Galaxy: React.FC<GalaxyProps> = (props) => {
     return(
         <main>
-            <h1 style={{color:"white"}}>Galaxy</h1>
-            <div style={css.content}></div>
+            <h1 style={styles.header}>Galaxy</h1>
+            <div style={styles.content}></div>
         </main>
     );
 };
 
-const css = {
+const styles = {
+    header: {
+        color: "white"
+    },
     content: {
         width: "95%",
         height: "50vh",

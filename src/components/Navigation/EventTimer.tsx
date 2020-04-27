@@ -35,14 +35,14 @@ const EventTimer: React.FC<EventTimerProps> = ({gameEvent: {name, endsAt}}) => {
     });
 
     return(
-        <div style={css.div}>
-            <span style={css.time}>{timeRemaining}</span>
-            <span style={css.name}>{name}</span>
+        <div style={styles.div}>
+            <span style={styles.time}>{timeRemaining}</span>
+            <span style={styles.name}>{name}</span>
         </div>
     );
 };
 
-const css = {
+const styles = {
     div: {
         display: "inline-block",
         width: "150px",
