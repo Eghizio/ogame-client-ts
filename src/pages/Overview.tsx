@@ -17,7 +17,7 @@ const Overview: React.FC<OverviewProps> = (props) => {
         const keys = Array.from(cdnResource.keys());
         const sprites = keys.map(key => cdnResource.get(key));
         
-        return sprites.map((sprite, i) => sprite && <Sprite key={sprite.position} src={sprite.src} position={sprite.position} width={sprite.width} height={sprite.height} />);
+        return sprites.map((sprite, i) => sprite && <Sprite key={sprite.position} {...sprite} />);
     };
     
     return(
