@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from "../providers/GlobalProvider"
 import Sprite from '../components/Sprite';
-import { CDN, SpriteMap } from '../types/global';
+import { SpriteMap } from '../types/global';
 
 
 export interface OverviewProps{

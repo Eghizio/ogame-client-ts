@@ -1,5 +1,6 @@
 export default interface GlobalState{
     cdn: CDN
+    data: GlobalData
 }
 
 export interface CDN{
@@ -65,3 +66,35 @@ export type SpriteMap = Map<ID, ISprite>
 
 export type ID = string;
 
+export interface GlobalData{
+    advertisement: Advertisement
+    player: Player
+    navigation: NavItem[]
+    event: Event
+    notice: INotice
+}
+
+export interface Advertisement{
+    bannerURL: string
+    href: string
+}
+
+export interface Player{
+    name: string
+    rank: number
+}
+
+export interface NavItem{
+    name: string
+    icon: string
+}
+
+export interface Event{
+    name: string
+    expires: Date
+}
+
+export interface INotice{
+    name: string
+    description: string
+}

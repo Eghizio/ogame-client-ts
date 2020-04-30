@@ -149,6 +149,32 @@ const initializeGlobalState = () => {
                     src: "https://gf3.geo.gfsrv.net/cdne4/d386882e5c67089b9b61de50acf88d.gif"
                 }
             }
+        },
+        data: {
+            advertisement: {
+                bannerURL: "https://gf3.geo.gfsrv.net/cdn86/bd3c2840dbf30b81ea8f96e4dcfadc.jpg",
+                // bannerURL: "https://gf1.geo.gfsrv.net/cdn3f/af316617574e981d0771fe9feefb48.jpg",
+                href: "/"    
+            },
+            player: {
+                name: "Eghizio",
+                rank: 420
+            },
+            navigation: [
+                { name: "Overview", icon: "🌎" },
+                { name: "Resources", icon: "⛏️" },
+                { name: "Station", icon: "🛰️" },
+                { name: "Trader", icon: "💰" },
+                { name: "Research", icon: "🧪" },
+                { name: "Shipyard", icon: "🏗️" },
+                { name: "Fleet", icon: "🚀" },
+                { name: "Galaxy", icon: "🌌" },
+                { name: "Alliance", icon: "👪" },
+                { name: "Cantine", icon: "⭐" },
+                { name: "Shop", icon: "💎" }
+            ],
+            event: { name: "Moon 100%", expires: new Date(Date.now()+86400000) },
+            notice: { name: "Attacks blocked", description: "Attacks are blocked until 27.04.2020 10:00:00. W tym czasie nie mogą być wysyłane wrogie floty." }
         }
     };
 

@@ -1,35 +1,26 @@
-import React from 'react';
-import Item, { ItemData } from "./Item";
+import React, { useContext } from 'react';
+import { GlobalContext } from '../../providers/GlobalProvider';
+import NavigationItem from "./NavigationItem";
 import EventTimer from "./EventTimer";
+import Notice from "./Notice";
 
-const navigation: ItemData[] = [
-    {primary: {children: "Overview",    href: "/overview"},     alt: {children: "🌎", href: "/overview/alt"}  },
-    {primary: {children: "Resources",   href: "/resources"},    alt: {children: "⛏️", href: "/resources/alt"} },
-    {primary: {children: "Station",     href:"/station"},       alt: {children: "🛰️", href: "/station/alt"}   },
-    {primary: {children: "Trader",      href:"/trader"},        alt: {children: "💰", href: "/trader/alt"}    },
-    {primary: {children: "Research",    href:"/research"},      alt: {children: "🧪", href: "/research/alt"}  },
-    {primary: {children: "Shipyard",    href:"/shipyard"},      alt: {children: "🏗️", href: "/shipyard/alt"}  },
-    {primary: {children: "Fleet",       href:"/fleet"},         alt: {children: "🚀", href: "/fleet/alt"}     },
-    {primary: {children: "Galaxy",      href:"/galaxy"},        alt: {children: "🌌", href: "/galaxy/alt"}    },
-    {primary: {children: "Alliance",    href:"/alliance"},      alt: {children: "👪", href: "/alliance/alt"}  },
-    {primary: {children: "Cantine",     href:"/cantine"},       alt: {children: "⭐", href: "/cantine/alt"}   },
-    {primary: {children: "Shop",        href:"/shop"},          alt: {children: "💎", href: "/shop/alt"}      }
-];
 
-const gameEvent: {name: string, endsAt: Date} = { name: "Moon 100%", endsAt: new Date(2020,3,13,9) };
-
+// Create Left and Right Bar container Components, style with flex
 const Navigation: React.FC = (props) => {
+    const context = useContext(GlobalContext);
+
+    // Only <nav/> should stay here
     return(
         <div style={styles.div}>
             <nav>
                 <ul style={styles.ul}>
-                    {navigation.map((n, i) => <Item item={n} key={i}></Item>)}
+                    {context && context.data.navigation.map(item => <NavigationItem key={item.name} name={item.name} icon={item.icon}/>)}
                 </ul>
             </nav>
-            {gameEvent.endsAt.getTime() > Date.now() && <EventTimer gameEvent={gameEvent}/>}
-            {/* advice_notification component, hoverable notification info, for ex 
-            "Blokada ataku
-            Blokada ataków jest aktywna do 27.04.2020 10:00:00. W tym czasie nie mogą być wysyłane wrogie floty.  */}
+            {context && context.data.event.expires.getTime() > Date.now() && 
+                <EventTimer name={context.data.event.name} expires={context.data.event.expires}/>}
+            {context && 
+                <Notice name={context.data.notice.name} description={context.data.notice.description}/>}
         </div>
     );
 };

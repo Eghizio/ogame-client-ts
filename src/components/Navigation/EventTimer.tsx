@@ -1,42 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Event } from "../../types/global";
+import useTimeTill from '../../hooks/useTimeTill';
 
-export interface EventTimerProps{
-    gameEvent: {
-        name: string;
-        endsAt: Date;
-    }
-};
 
-//might add breathing opacity when time remaining low
-const EventTimer: React.FC<EventTimerProps> = ({gameEvent: {name, endsAt}}) => {
-    const [timeRemaining, setTime] = useState<string>("");
-
-    useEffect(() => {
-
-        const parseTime = () => {
-            let parsedTime: string = timeRemaining;
-
-            let time: number = endsAt.getTime() - Date.now();
-
-            const days:     number = Math.floor( time/ (1000 * 60 * 60 * 24) );
-            time -= days*(1000 * 60 * 60 * 24);
-            const hours:    number = Math.floor( time/ (1000 * 60 * 60) );
-            time -= hours*(1000 * 60 * 60);
-            const minutes:  number = Math.ceil( time/ (1000 * 60) );
-
-            parsedTime = `${days}d ${hours}h ${minutes}min.`;
-
-            setTime(parsedTime);
-        };
-        parseTime();
-        const timer = setInterval(parseTime, 60000);
-
-        return () => clearInterval(timer);
-    });
+// when time remaining low => add className with breathing opacity animation
+const EventTimer: React.FC<Event> = ({name, expires}) => {
+    const { days, hours, minutes, seconds } = useTimeTill(expires);
 
     return(
         <div style={styles.div}>
-            <span style={styles.time}>{timeRemaining}</span>
+            <span style={styles.label}>Event ends in:</span>
+            <span style={styles.time}>
+                {days !== "00" ? `${days}d ` : null}
+                {hours !== "00" ? `${hours}h ` : null}
+                {minutes !== "00" ? `${minutes}m ` : null}
+                {seconds !== "00" ? ` ${seconds}s` : null}
+            </span>
             <span style={styles.name}>{name}</span>
         </div>
     );
@@ -46,20 +25,25 @@ const styles = {
     div: {
         display: "inline-block",
         width: "150px",
-        height: "60px",
+        height: "80px",
         textAlign: "center" as const,
         border: "1px solid gold",
         borderRadius: "5px",
         marginLeft: "-10px"
     },
-    name: {
-        display: "inline-block",
-        fontSize: "15px"
+    label: {
+        display: "inline-block"
     },
     time: {
+        display: "inline-block",
         color: "gold",
-        fontSize: "21px",
+        fontSize: "16px",
         fontWeight: "bold" as const
+    },
+    name: {
+        display: "inline-block",
+        padding: "0 5px",
+        marginTop: "10px"
     }
 };
 

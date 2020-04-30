@@ -1,33 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from "../../providers/GlobalProvider";
 import { Link } from 'react-router-dom';
 import Clock from "./Clock";
 
-export interface HeaderProps{
 
-}
+const Header: React.FC = () => {
+    const context = useContext(GlobalContext);
+    const headerLinks = ["Notes", "Friends", "Search", "Settings", "Support", "Logout"]; // ..."Stats"
 
-const player = {
-    name: "Eghizio",
-    rank: 420
-};
-
-// Gracz: Eghizio Statystyki (566) Notatki Znajomi Szukaj Ustawienia Support Wyloguj 23.10.2019 19:01:59
-const Header: React.FC<HeaderProps> = (props) => {
-
-    
-    
     return(
         <header style={styles.header}>
-            <span>Player: <Link style={styles.link} to="/">{player.name}</Link></span>
+            <span>Player: <Link style={styles.link} to="/">{context && context.data.player.name}</Link></span>
             <span>
                 <ul style={styles.ul}>
-                    <li style={styles.li}><Link style={styles.link} to="/">Stats</Link>({player.rank})</li>
-                    <li style={styles.li}><Link style={styles.link} to="/">Notes</Link></li>
-                    <li style={styles.li}><Link style={styles.link} to="/">Friends</Link></li>
-                    <li style={styles.li}><Link style={styles.link} to="/">Search</Link></li>
-                    <li style={styles.li}><Link style={styles.link} to="/">Settings</Link></li>
-                    <li style={styles.li}><Link style={styles.link} to="/">Support</Link></li>
-                    <li style={styles.li}><Link style={styles.link} to="/">Logout</Link></li>
+                    <li style={styles.li}><Link style={styles.link} to="/">Stats</Link> ({context && context.data.player.rank})</li>
+                    {headerLinks.map(link => 
+                        <li key={link} style={styles.li}><Link style={styles.link} to={`/${link.toLowerCase()}`}>{link}</Link></li>)}
                 </ul>
             </span>
             <Clock/>
