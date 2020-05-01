@@ -152,8 +152,11 @@ const initializeGlobalState = () => {
         },
         data: {
             advertisement: {
-                bannerURL: "https://gf3.geo.gfsrv.net/cdn86/bd3c2840dbf30b81ea8f96e4dcfadc.jpg",
-                // bannerURL: "https://gf1.geo.gfsrv.net/cdn3f/af316617574e981d0771fe9feefb48.jpg",
+                bannerURL: [
+                    "https://gf1.geo.gfsrv.net/cdn3f/af316617574e981d0771fe9feefb48.jpg",
+                    "https://gf3.geo.gfsrv.net/cdn86/bd3c2840dbf30b81ea8f96e4dcfadc.jpg",
+                    "https://gf2.geo.gfsrv.net/cdna7/59e0701bc240053ae41cfb6b6ee4ae.jpg"
+                ][Math.floor(Math.random()*3)], // hardcoded length cause i can and its temp data source anyways XD
                 href: "/"    
             },
             player: {

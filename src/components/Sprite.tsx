@@ -4,8 +4,6 @@ import { ISprite } from "../types/global";
 
 
 const Sprite: React.FC<ISprite> = ({src, position, width, height}) => {
-    // position = "-200px 0px"
-
     return (
         <div
         style={{

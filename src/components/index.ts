@@ -1,15 +1,7 @@
-import Header from "./Header";
-import TopBar from "./TopBar";
-import Navigation from "./Navigation";
-import PlanetBar from "./PlanetBar";
-import Advertisement from "./Advertisement";
-import Emoji from "./Emoji";
-
-export {
-    Header,
-    TopBar,
-    Navigation,
-    PlanetBar,
-    Advertisement,
-    Emoji
-};
+export { default as Header } from "./Header";
+export { default as TopBar } from "./TopBar";
+export { default as Navigation } from "./Navigation";
+export { default as PlanetBar } from "./PlanetBar";
+export { default as Advertisement } from "./Advertisement";
+export { default as Emoji } from "./Emoji";
+export { default as Sprite } from "./Sprite";
