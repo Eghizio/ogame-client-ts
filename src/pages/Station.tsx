@@ -13,6 +13,7 @@ const Station: React.FC<StationProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         color: "white"

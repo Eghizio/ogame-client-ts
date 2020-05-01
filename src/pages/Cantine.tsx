@@ -13,6 +13,7 @@ const Cantine: React.FC<CantineProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         color: "white"

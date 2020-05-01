@@ -14,6 +14,7 @@ const Advertisement: React.FC = () => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     img: {
         width: "120px",

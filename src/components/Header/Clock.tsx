@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 export interface ClockProps{
     style?: React.CSSProperties
 }
@@ -29,9 +30,5 @@ const Clock: React.FC<ClockProps> = ({style}) => {
     );
 };
 
-// eslint-disable-next-line
-const styles = {
-
-};
 
 export default Clock;

@@ -11,6 +11,7 @@ const Moon: React.FC<MoonProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     moon: {
         width: "40px",

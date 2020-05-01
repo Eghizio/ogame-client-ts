@@ -1,26 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Planet from './Planet';
+import { GlobalContext } from '../../providers/GlobalProvider';
 
-interface PlanetBarProps{
 
-}
+const PlanetBar: React.FC = () => {
+    const context = useContext(GlobalContext);
 
-const maxPlanets = 5;
-const planets: {name:string, coords: number[], id:number, moon:{name:string, id:number}|undefined}[]= [
-    { name: "Planet 1", coords: [1,284,6], id: 1, moon: { name: "", id: 1} },
-    { name: "Planet 2", coords: [1,284,7], id: 2, moon: { name: "", id: 2} },
-    { name: "Planet 3", coords: [1,284,8], id: 3, moon: { name: "", id: 3} },
-];
-
-const PlanetBar: React.FC<PlanetBarProps> = (props) => {
+    if(!context) return null;
     return(
         <aside style={styles.aside}>
-            <div style={styles.colonised}>{planets.length}/{maxPlanets} Planets</div>
-            {planets.map(planet => <Planet key={planet.id} name={planet.name} coords={planet.coords} id={planet.id} moon={planet.moon}/>)}
+            <div style={styles.colonised}>{context.data.planets.length}/{context.data.maxPlanets} Planets</div>
+            {context.data.planets.map(planet => <Planet key={planet.id} name={planet.name} coords={planet.coords} id={planet.id} moon={planet.moon}/>)}
         </aside>
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     aside: {
         width: "120px",

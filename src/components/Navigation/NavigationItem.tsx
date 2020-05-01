@@ -23,6 +23,7 @@ const NavigationItem: React.FC<NavItem> = ({name, icon}) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     li: {
         display: "inline-flex",

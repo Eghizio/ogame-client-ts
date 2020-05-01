@@ -1,13 +1,15 @@
 import React from 'react';
 import Moon from './Moon';
 
+// Should i move all of the props of components to props.d.ts type file or keep it with the component?
+// I could already use the type from global.d.ts although its kinda temporary data store
 interface PlanetProps{
+    id: number
     name: string
     coords: number[]
-    id: number
     moon?: {
-        name: string
         id: number
+        name: string
     }
 }
 
@@ -23,6 +25,7 @@ const Planet: React.FC<PlanetProps> = ({name, coords, id, moon}) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     wrapper: {
         display: "inline-block",

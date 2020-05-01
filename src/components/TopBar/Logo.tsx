@@ -10,6 +10,7 @@ const Logo: React.FC<LogoProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     img: {
         width: "200px",

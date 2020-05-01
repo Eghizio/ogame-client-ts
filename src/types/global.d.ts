@@ -3,6 +3,7 @@ export default interface GlobalState{
     data: GlobalData
 }
 
+// CDN ( external asset source / easily replacable )
 export interface CDN{
     // [key: string]: SpriteMap
 	buildings: SpriteMap
@@ -66,12 +67,15 @@ export type SpriteMap = Map<ID, ISprite>
 
 export type ID = string;
 
+// Global Data (props / fetched data / etc)
 export interface GlobalData{
     advertisement: Advertisement
     player: Player
     navigation: NavItem[]
     event: Event
     notice: INotice
+    maxPlanets: number
+    planets: Planet[]
 }
 
 export interface Advertisement{
@@ -97,4 +101,16 @@ export interface Event{
 export interface INotice{
     name: string
     description: string
+}
+
+export interface Planet{
+    id: number
+    name: string
+    coords: [number, number, number]
+    moon?: Moon
+}
+
+export interface Moon{
+    id: number
+    name: string
 }

@@ -13,6 +13,7 @@ const Trader: React.FC<TraderProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         color: "white"

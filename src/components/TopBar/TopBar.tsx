@@ -17,6 +17,7 @@ const TopBar: React.FC<TopBarProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     container: {
         display: "flex"

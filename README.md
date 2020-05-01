@@ -4,7 +4,7 @@ Gameforge's OGame Front-End reinvented using React and TypeScript.
 
 
 
-## Development server
+## Development
 >`npm start`
 ## Production build
 >`npm run build`

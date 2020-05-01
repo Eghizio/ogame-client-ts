@@ -13,6 +13,7 @@ const Alliance: React.FC<AllianceProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         color: "white"

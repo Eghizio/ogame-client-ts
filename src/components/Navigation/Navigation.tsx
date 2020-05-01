@@ -25,6 +25,7 @@ const Navigation: React.FC = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     div : {
         width: "180px",

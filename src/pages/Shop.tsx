@@ -13,6 +13,7 @@ const Shop: React.FC<ShopProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         color: "white"

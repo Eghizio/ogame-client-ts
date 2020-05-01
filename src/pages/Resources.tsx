@@ -13,6 +13,7 @@ const Resources: React.FC<ResourcesProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         color: "white"

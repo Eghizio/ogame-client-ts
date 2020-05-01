@@ -23,6 +23,7 @@ const Header: React.FC = () => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         width: "80%",

@@ -33,6 +33,7 @@ const Overview: React.FC<OverviewProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         color: "white"

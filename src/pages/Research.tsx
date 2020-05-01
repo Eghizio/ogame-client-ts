@@ -13,6 +13,7 @@ const Research: React.FC<ResearchProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         color: "white"

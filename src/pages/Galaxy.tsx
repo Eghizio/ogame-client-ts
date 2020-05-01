@@ -13,6 +13,7 @@ const Galaxy: React.FC<GalaxyProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         color: "white"

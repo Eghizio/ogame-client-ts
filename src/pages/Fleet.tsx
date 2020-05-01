@@ -13,6 +13,7 @@ const Fleet: React.FC<FleetProps> = (props) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     header: {
         color: "white"

@@ -21,6 +21,7 @@ const EventTimer: React.FC<Event> = ({name, expires}) => {
     );
 };
 
+// eslint-disable-next-line
 const styles = {
     div: {
         display: "inline-block",

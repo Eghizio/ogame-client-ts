@@ -177,7 +177,13 @@ const initializeGlobalState = () => {
                 { name: "Shop", icon: "💎" }
             ],
             event: { name: "Moon 100%", expires: new Date(Date.now()+86400000) },
-            notice: { name: "Attacks blocked", description: "Attacks are blocked until 27.04.2020 10:00:00. W tym czasie nie mogą być wysyłane wrogie floty." }
+            notice: { name: "Attacks blocked", description: "Attacks are blocked until 27.04.2020 10:00:00." },
+            maxPlanets: 5, // will be calculated from Astrophysics research level
+            planets: [
+                { name: "Planet 1", coords: [1,284,6], id: 1, moon: { name: "Moon", id: 1} },
+                { name: "Planet 2", coords: [1,284,7], id: 2, moon: { name: "Pandora", id: 2} },
+                { name: "Planet 3", coords: [1,284,8], id: 3 }
+            ]
         }
     };
 
