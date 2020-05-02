@@ -11,8 +11,8 @@ export interface DefaultTooltipProps{
 const DefaultTooltip: React.FC<DefaultTooltipProps> = ({position, name, content, style}) => {
     return (
         <div className={`tooltip-body-default tooltip-body-${position}`} style={style}>
-            <h5>{name}</h5>
-            <p>{content}</p>
+            <h4>{name || "Name"}</h4>
+            <p>{content || "Content"}</p>
         </div>
     );
 };

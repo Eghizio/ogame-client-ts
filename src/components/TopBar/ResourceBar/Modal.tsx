@@ -6,8 +6,7 @@ export interface ModalProps{
     resource: Global.Resource
 }
 
-//make modal a standalone component with configurable display(side:left/right/above/below)
-// Edit: This will be just replaced by a Tooltip component
+// Change this component into custom tooltip for resources, ResourceTooltip
 const Modal: React.FC<ModalProps> = ({parentRef, resource}) => {
     const useSize = () => {
         const [size, setSize] = useState<{width:number,height:number}>({width:50,height:30});

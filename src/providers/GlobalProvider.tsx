@@ -24,6 +24,7 @@ export default GlobalProvider;
 
 export { GlobalContext };
 
+
 const mapLargeSprites = (ids: Global.ID[], initialY = "0px") => {
     const spriteSheet = "https://gf3.geo.gfsrv.net/cdn53/7a9861be0c38bf7de05a57c56d73cf.jpg";
     let x = 0;
@@ -129,21 +130,24 @@ const initializeGlobalState = () => {
                     height: "32px"
                 }
             },
-            classes: {
+            classes: { // needs cdn for proper sizing
                 miner: {
                     src: "https://gf3.geo.gfsrv.net/cdn87/ebadb2179a145168f234a9287786c1.png", //https://s167-pl.ogame.gameforge.com/cdn/img/mco/characterclasses/miner_200.png
-                    width: "60px",
-                    height: "60px"
+                    position: "0px 0px",
+                    width: "40px",
+                    height: "40px"
                 },
-                warrior: {
-                    src: "",
-                    width: "60px",
-                    height: "60px"
+                warrior: { // placeholder src
+                    src: "https://gf3.geo.gfsrv.net/cdn87/ebadb2179a145168f234a9287786c1.png",
+                    position: "0px 0px",
+                    width: "40px",
+                    height: "40px"
                 },
-                explorer: {
-                    src: "", //https://s167-pl.ogame.gameforge.com/cdn/img/mco/characterclasses/explorer_200.png
-                    width: "60px",
-                    height: "60px"
+                explorer: { // placeholder src
+                    src: "https://gf3.geo.gfsrv.net/cdn87/ebadb2179a145168f234a9287786c1.png", //https://s167-pl.ogame.gameforge.com/cdn/img/mco/characterclasses/explorer_200.png
+                    position: "0px 0px",
+                    width: "40px",
+                    height: "40px"
                 }
             },
             icons: {

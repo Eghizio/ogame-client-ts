@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../../providers/GlobalProvider";
+import Sprite from "../../Sprite";
+import Global from "../../../types/global";
+import Tooltip from "../../Tooltip";
 
 export interface OfficerProps {
-    name: string
+    name: Global.Officer
 }
 
 const Officer: React.FC<OfficerProps> = ({name}) => {
+    const context = useContext(GlobalContext);
+
+    if(!context) return null;
+
+    const officerCDN = context.cdn.officers[name.toLowerCase()];
+
     return (
-        <div style={{width: "30px", height: "30px", border: "1px solid aquamarine", margin: "1px"}}>
-            {name ? name.substring(0,2) : null}
-        </div>
+        <Tooltip position="bottom">
+            {officerCDN && <Sprite src={officerCDN.src} {...officerCDN} style={styles.officer}/>}
+        </Tooltip>
     );
+};
+
+const styles = {
+    officer: {
+        margin: "0 5px"
+    }
 };
 
 export default Officer;

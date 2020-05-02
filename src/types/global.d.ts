@@ -18,6 +18,7 @@ declare namespace Global {
     }
 
     export interface Officers{
+        [key: string]: Sprite
         commander: Sprite
         admiral: Sprite
         engineer: Sprite
@@ -26,6 +27,7 @@ declare namespace Global {
     }
 
     export interface Resources{
+        [key: string]: Sprite
         metal: Sprite
         crystal: Sprite
         deuterium: Sprite
@@ -34,6 +36,7 @@ declare namespace Global {
     }
 
     export interface Classes{
+        [key: string]: Sprite
         miner: Sprite
         warrior: Sprite
         explorer: Sprite
@@ -147,6 +150,8 @@ declare namespace Global {
     export type Resource = Required<BaseResource> & Partial<MineableResource | Antimatter | Energy>
 
     export type PlayerClass = "Miner" | "Warrior" | "Explorer"
+
+    export type Officer = "Commander" | "Admiral" | "Engineer" | "Geologist" | "Technocrat"
 
 }
 
