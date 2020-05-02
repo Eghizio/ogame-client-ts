@@ -29,8 +29,8 @@ declare namespace Global {
         metal: Sprite
         crystal: Sprite
         deuterium: Sprite
+        antimatter: Sprite
         energy: Sprite
-        darkMatter: Sprite
     }
 
     export interface Classes{
@@ -66,7 +66,7 @@ declare namespace Global {
 
     export type SpriteMap = Map<ID, Sprite>
 
-    export type ID = string;
+    export type ID = string
 
     // Data (props / fetched data / etc)
     export interface Data{
@@ -76,7 +76,9 @@ declare namespace Global {
         event: Event
         notice: Notice
         maxPlanets: number
-        planets: Planet[]
+        planets: Planet[],
+        resources: [MineableResource, MineableResource, MineableResource, Antimatter, Energy]
+        playerClasses: [PlayerClass, PlayerClass, PlayerClass]
     }
 
     export interface Advertisement{
@@ -115,6 +117,37 @@ declare namespace Global {
         id: number
         name: string
     }
+
+    export interface BaseResource{
+        name: string
+        amount: number
+    }
+
+    export interface ProducableResource extends BaseResource{
+        production: number
+    }
+
+    export interface MineableResource extends ProducableResource{
+        name: "Metal" | "Crystal" | "Deuterium"
+        storage: number
+        shelter: number //can be calculated, shelter = 24*production* shelter_level(1-10+)%
+    }
+
+    export interface Antimatter extends BaseResource{
+        name: "Antimatter" // amount <= bought+found
+        bought: number
+        found: number
+    }
+
+    export interface Energy extends ProducableResource{
+        name: "Energy"
+        usage: number //can be calculated, usage = production - amount
+    }
+
+    export type Resource = Required<BaseResource> & Partial<MineableResource | Antimatter | Energy>
+
+    export type PlayerClass = "Miner" | "Warrior" | "Explorer"
+
 }
 
 export default Global;

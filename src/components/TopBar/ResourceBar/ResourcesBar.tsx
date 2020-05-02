@@ -1,41 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Resource from "./Resource";
+import { GlobalContext } from '../../../providers/GlobalProvider';
 
-export interface ResourcesBarProps {
 
-}
+const ResourcesBar: React.FC = () => {
+    const context = useContext(GlobalContext);
 
-export type resource = "Metal" | "Crystal" | "Deuterium" | "Antimatter" | "Energy";
-export interface ResourceProps {
-    id?: string
-    resourceType: resource
-    amount: number
-    storage: number
-    production: number
-    shelter: number
-}
-
-const sampleProps: ResourceProps[] = [
-    { resourceType: "Metal", amount: 10000, storage: 75000, production: 2137, shelter: 2100 },
-    { resourceType: "Crystal", amount: 4200, storage: 75000, production: 2137, shelter: 1500 },
-    { resourceType: "Deuterium", amount: 10000, storage: 75000, production: 2137, shelter: 1200 },
-    { resourceType: "Antimatter", amount: 10000, storage: 75000, production: 2137, shelter: 1200 },
-    { resourceType: "Energy", amount: 10000, storage: 75000, production: 2137, shelter: 1200 },
-];
-
-const ResourcesBar: React.FC<ResourcesBarProps> = (props) => {
-    const resources = ["Metal", "Crystal", "Deuterium", "Antimatter", "Energy"];
-
+    if(!context) return null;
     return (
-        <div style={{display: "flex"}}>
-            {resources.map((r,i) => <Resource {...sampleProps[i]} key={i} />)}
+        <div style={styles.resourceBar}>
+            {context.data.resources.map(resource => <Resource key={resource.name} {...resource} />)}
         </div>
     );
 };
 
 // eslint-disable-next-line
 const styles = {
-
+    resourceBar: {
+        display: "flex"
+    }
 };
 
 export default ResourcesBar;

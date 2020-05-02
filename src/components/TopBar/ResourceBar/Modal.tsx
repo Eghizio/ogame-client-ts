@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from "react";
+import Global from "../../../types/global";
 
-
-export type resource = "Metal" | "Crystal" | "Deuterium" | "Antimatter" | "Energy";
-export interface ResourceProps {
-    id?: string
-    resourceType: resource
-    amount: number
-    storage: number
-    production: number
-    shelter: number
+export interface ModalProps{
+    parentRef: any
+    resource: Global.Resource
 }
-
 
 //make modal a standalone component with configurable display(side:left/right/above/below)
 // Edit: This will be just replaced by a Tooltip component
-const Modal: React.FC<{parentRef:any, res:ResourceProps}> = ({parentRef, res}) => {
+const Modal: React.FC<ModalProps> = ({parentRef, resource}) => {
     const useSize = () => {
         const [size, setSize] = useState<{width:number,height:number}>({width:50,height:30});
         useEffect(() => {
@@ -27,15 +21,30 @@ const Modal: React.FC<{parentRef:any, res:ResourceProps}> = ({parentRef, res}) =
     };
     const size = useSize();
     
+    const calculatedStyle = {
+        width: `${size.width*3}px`,
+        left: -size.width
+    };
+
     return (
-        <div style={{position: "relative", width: `${size.width*3}px`, left: -size.width, padding: "3px", backgroundColor: "#222", border: "2px solid #aaa", borderRadius: "5px"}}>
-            <span>{res.resourceType}</span><br/>
-            <span>{"Amount: " + res.amount}</span><br/>
-            <span>{"Storage: " + res.storage}</span><br/>
-            <span>{"Production: " + res.production}</span><br/>
-            <span>{"Protected: " + res.shelter}</span>
+        <div style={{...styles.modal, ...calculatedStyle}}>
+            <span>{resource.name}</span><br/>
+            <span>{"Amount: " + resource.amount}</span><br/>
+            {/* {resource.storage && <span>{"Storage: " + resource.storage}</span>}<br/>
+            {resource.production && <span>{"Production: " + resource.production}</span>}<br/>
+            {resource.shelter && <span>{"Protected: " + resource.shelter}</span>} */}
         </div>
     );
+};
+
+const styles = {
+    modal: {
+        position: "relative" as const,
+        padding: "3px",
+        backgroundColor: "#222",
+        border: "2px solid #aaa",
+        borderRadius: "5px"
+    }
 };
 
 export default Modal;

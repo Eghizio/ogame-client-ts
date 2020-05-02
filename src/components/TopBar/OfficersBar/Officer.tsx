@@ -1,13 +1,13 @@
 import React from "react";
 
 export interface OfficerProps {
-    type: string
+    name: string
 }
 
-const Officer: React.FC<OfficerProps> = ({type}) => {
+const Officer: React.FC<OfficerProps> = ({name}) => {
     return (
         <div style={{width: "30px", height: "30px", border: "1px solid aquamarine", margin: "1px"}}>
-            {type ? type.substring(0,2) : null}
+            {name ? name.substring(0,2) : null}
         </div>
     );
 };

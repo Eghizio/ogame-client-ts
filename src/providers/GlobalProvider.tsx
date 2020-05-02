@@ -5,7 +5,7 @@ import Global from "../types/global";
 const GlobalContext = createContext<Global.State|null>(null);
 
 export interface GlobalProviderProps{
-    children: any
+    children: React.ReactNode
 }
 
 const GlobalProvider: React.FC<GlobalProviderProps> = ({children}) => {
@@ -79,14 +79,16 @@ const initializeGlobalState = () => {
                     width: "48px",
                     height: "32px"
                 },
-                energy: {
+                antimatter: {
+                    // gif: "https://gf1.geo.gfsrv.net/cdnc5/401d1a91ff40dc7c8acfa4377d3d65.gif", // need to extend the Sprite type&component for gifs
                     src: "https://gf3.geo.gfsrv.net/cdnbb/a9fe14ed992de9b7f40d22213a475e.png",
-                    position: "-144px -160px",
+                    position: "-192px -160px",
                     width: "48px",
                     height: "32px"
                 },
-                darkMatter: {
-                    src: "https://gf1.geo.gfsrv.net/cdnc5/401d1a91ff40dc7c8acfa4377d3d65.gif",
+                energy: {
+                    src: "https://gf3.geo.gfsrv.net/cdnbb/a9fe14ed992de9b7f40d22213a475e.png",
+                    position: "-144px -160px",
                     width: "48px",
                     height: "32px"
                 }
@@ -177,13 +179,21 @@ const initializeGlobalState = () => {
                 { name: "Shop", icon: "💎" }
             ],
             event: { name: "Moon 100%", expires: new Date(Date.now()+86400000) }, // 24h just for dev purpose
-            notice: { name: "Attacks blocked", description: "Attacks are blocked until 27.04.2020 10:00:00." },
+            notice: { name: "Attacks blocked", description: `Attacks are blocked until ${new Date(Date.now()+86400000).toISOString()}.` },
             maxPlanets: 5, // will be calculated from Astrophysics research level
             planets: [
                 { name: "Planet 1", coords: [1,284,6], id: 1, moon: { name: "Moon", id: 1} },
                 { name: "Planet 2", coords: [1,284,7], id: 2, moon: { name: "Pandora", id: 2} },
                 { name: "Planet 3", coords: [1,284,8], id: 3 }
-            ]
+            ],
+            resources: [
+                { name: "Metal", amount: 16512, storage: 75000, production: 5000, shelter: 2100 },
+                { name: "Crystal", amount: 4200, storage: 40000, production: 2137, shelter: 1500 },
+                { name: "Deuterium", amount: 1234, storage: 10000, production: 420, shelter: 1200 },
+                { name: "Antimatter", amount: 10000,  bought: 0, found: 10000 },
+                { name: "Energy", amount: 4000, production: 10000, usage: 6000 }
+            ],
+            playerClasses: [ "Miner", "Warrior", "Explorer" ]
         }
     };
 

@@ -1,13 +1,13 @@
 import React from "react"
 
 export interface PlayerClassProps {
-    type?: "Miner" | "Warrior" | "Explorer"
+    name?: "Miner" | "Warrior" | "Explorer"
 }
 
-const PlayerClass: React.FC<PlayerClassProps> = ({type}) => {
+const PlayerClass: React.FC<PlayerClassProps> = ({name}) => {
     return (
         <div style={{width: "35px", height: "35px", border: "1px solid orange", margin: "1px"}}>
-            {type ? type.substring(0,2) : null}
+            {name ? name.substring(0,2) : null}
         </div>
     );
 };

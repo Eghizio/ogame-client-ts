@@ -5,10 +5,36 @@
     height: 100%;
 }
 
-.tooltip-body{
+.tooltip-body-default{
     position: absolute;
     z-index: 10;
     max-width: 180px;
+    background-color: #282c34;
+    padding: 5px;
     border: 1px solid black;
     font-size: small;
+}
+
+.tooltip-body-top{
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip-body-bottom{
+    top: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/*  */
+.tooltip-body-left{
+    right: 125%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/*  */
+.tooltip-body-right{
+    left: 125%;
+    top: 50%;
+    transform: translateY(-50%);
 }

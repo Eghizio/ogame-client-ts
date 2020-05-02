@@ -1,25 +1,28 @@
-import React, { useState, ReactNode } from 'react';
+import React, { useState } from 'react';
 import './Tooltip.css';
+import DefaultTooltip, { DefaultTooltipProps } from "./DefaultTooltip";
 
-export interface TooltipProps{
-    name?: string
-    content?: string
+export interface TooltipProps extends DefaultTooltipProps{
+    children: React.ReactNode
     position: "top" | "bottom" | "right" | "left"
-    children: ReactNode
+    tooltip?: React.ReactNode //slot
 }
 
-// Need to style it xd
-const Tooltip: React.FC<TooltipProps> = ({name, content, position, children}) => {
+
+// Implement css arrow based on position?
+const Tooltip: React.FC<TooltipProps> = ({children, position, tooltip, name, content}) => {
     const [isHovered, setIsHovered] = useState<boolean>(false);
 
     return (
         <div>
-            <div className={`tooltip-container ${position}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            <div className="tooltip-container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                 {children}
-                <div className="tooltip-body" style={{display: isHovered ? "block" : "none"}}>
-                    <h5>{name}</h5>
-                    <p>{content}</p>
-                </div>
+                {!isHovered ? null : tooltip
+                    ?   <div className={`tooltip-body-${position}`}>
+                            {tooltip}
+                        </div>
+                    : <DefaultTooltip position={position} name={name} content={content}/>
+                }
             </div>
         </div>
     );

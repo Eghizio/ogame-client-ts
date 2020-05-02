@@ -7,7 +7,7 @@ import Tooltip from '../Tooltip';
 // Styling fixes needed
 const Notice: React.FC<Global.Notice> = ({name, description}) => {
     return (
-        <Tooltip name={name} content={description} position="top">
+        <Tooltip name={name} content={description} position="bottom">
             <div style={styles.notice}/>
         </Tooltip>
     );

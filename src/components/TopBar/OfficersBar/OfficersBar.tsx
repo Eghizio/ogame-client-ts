@@ -8,12 +8,16 @@ export interface OfficersBarProps{
 }
 
 const OfficersBar: React.FC<OfficersBarProps> = (props) => {
+    const playerClasses: ["Miner", "Warrior", "Explorer"] = ["Miner", "Warrior", "Explorer"];
     const officers = ["Comandor", "Admiral", "Mechanic", "Geologist", "Technocrat"];
+
+    // for testing
+    const randomClass = playerClasses[ Math.floor( Math.random()*playerClasses.length ) ];
 
     return (
         <div style={{display: "flex"}}>
-            <PlayerClass type={"Miner"}/>
-            {officers.map(o => <Officer type={o} key={o}/>)}
+            <PlayerClass name={randomClass}/>
+            {officers.map(officer => <Officer key={officer} name={officer} />)}
         </div>
     );
 };
