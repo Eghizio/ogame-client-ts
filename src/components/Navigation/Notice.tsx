@@ -1,11 +1,11 @@
 import React from 'react';
 // import './Notice.css';
-import { INotice } from '../../types/global';
+import Global from '../../types/global';
 import Tooltip from '../Tooltip';
 
 
 // Styling fixes needed
-const Notice: React.FC<INotice> = ({name, description}) => {
+const Notice: React.FC<Global.Notice> = ({name, description}) => {
     return (
         <Tooltip name={name} content={description} position="top">
             <div style={styles.notice}/>

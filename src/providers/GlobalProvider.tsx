@@ -1,8 +1,8 @@
 import React, { createContext } from "react";
-import GlobalState, { ID, ISprite } from "../types/global";
+import Global from "../types/global";
 
 
-const GlobalContext = createContext<GlobalState|null>(null);
+const GlobalContext = createContext<Global.State|null>(null);
 
 export interface GlobalProviderProps{
     children: any
@@ -11,7 +11,7 @@ export interface GlobalProviderProps{
 const GlobalProvider: React.FC<GlobalProviderProps> = ({children}) => {
     // Simulates fetched data or assets from API or CDN
     // might move some of the properties into the Components or CSS
-    const data: GlobalState = initializeGlobalState();
+    const data: Global.State = initializeGlobalState();
 
     return (
         <GlobalContext.Provider value={data}>
@@ -24,20 +24,20 @@ export default GlobalProvider;
 
 export { GlobalContext };
 
-const mapLargeSprites = (ids: ID[], initialY = "0px") => {
+const mapLargeSprites = (ids: Global.ID[], initialY = "0px") => {
     const spriteSheet = "https://gf3.geo.gfsrv.net/cdn53/7a9861be0c38bf7de05a57c56d73cf.jpg";
     let x = 0;
     let y = initialY;
     const width = 200;
     const height = 200;
 
-    const spriteMap = new Map<string, ISprite>();
+    const spriteMap = new Map<string, Global.Sprite>();
 
     // it is blocking tho, setTimeout zero ?, promises?
     ids.forEach((id, i) => {
         x = width * -i;
 
-        const sprite: ISprite = {
+        const sprite: Global.Sprite = {
             src: spriteSheet,
             position: `${x}px ${y}`,
             width: `${width}px`,
@@ -52,13 +52,13 @@ const mapLargeSprites = (ids: ID[], initialY = "0px") => {
 
 const initializeGlobalState = () => {
     //IDs were grouped from my api 
-    const buildingsIDs: ID[] = ["1", "2", "3", "4", "12", "14", "15", "21", "22", "23", "24", "31", "33", "34", "36", "41", "42", "43", "44"];
-    const researchIDs: ID[] = ["106", "108", "109", "110", "111", "113", "114", "115", "117", "118", "120", "121", "122", "123", "124", "199"];
-    const shipsIDs: ID[] = ["202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218", "219"];
-    const defenseIDs: ID[] = ["401", "402", "403", "404", "405", "406", "407", "408", "502", "503"];
+    const buildingsIDs: Global.ID[] = ["1", "2", "3", "4", "12", "14", "15", "21", "22", "23", "24", "31", "33", "34", "36", "41", "42", "43", "44"];
+    const researchIDs: Global.ID[] = ["106", "108", "109", "110", "111", "113", "114", "115", "117", "118", "120", "121", "122", "123", "124", "199"];
+    const shipsIDs: Global.ID[] = ["202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218", "219"];
+    const defenseIDs: Global.ID[] = ["401", "402", "403", "404", "405", "406", "407", "408", "502", "503"];
     // const missionsIDs = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "15"]; // No large sprites there tbh
 
-    const initialState: GlobalState = {
+    const initialState: Global.State = {
         cdn: {
             resources: {
                 metal: {
@@ -176,7 +176,7 @@ const initializeGlobalState = () => {
                 { name: "Cantine", icon: "⭐" },
                 { name: "Shop", icon: "💎" }
             ],
-            event: { name: "Moon 100%", expires: new Date(Date.now()+86400000) },
+            event: { name: "Moon 100%", expires: new Date(Date.now()+86400000) }, // 24h just for dev purpose
             notice: { name: "Attacks blocked", description: "Attacks are blocked until 27.04.2020 10:00:00." },
             maxPlanets: 5, // will be calculated from Astrophysics research level
             planets: [

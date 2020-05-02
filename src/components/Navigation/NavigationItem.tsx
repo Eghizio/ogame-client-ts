@@ -1,10 +1,10 @@
 import React from 'react';
-import { NavItem } from "../../types/global";
+import Global from "../../types/global";
 import { Link } from 'react-router-dom';
 import Emoji from "../Emoji";
 
 
-const NavigationItem: React.FC<NavItem> = ({name, icon}) => {
+const NavigationItem: React.FC<Global.NavItem> = ({name, icon}) => {
     return(
         <li style={styles.li}>
             <Link style={styles.link} to={`/${name.toLowerCase()}`}>

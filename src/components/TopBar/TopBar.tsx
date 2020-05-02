@@ -20,7 +20,10 @@ const TopBar: React.FC<TopBarProps> = (props) => {
 // eslint-disable-next-line
 const styles = {
     container: {
-        display: "flex"
+        width: "100%",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "space-between",
     }
 };
 

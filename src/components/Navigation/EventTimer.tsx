@@ -1,10 +1,10 @@
 import React from 'react';
-import { Event } from "../../types/global";
+import Global from "../../types/global";
 import useTimeTill from '../../hooks/useTimeTill';
 
 
 // when time remaining low => add className with breathing opacity animation
-const EventTimer: React.FC<Event> = ({name, expires}) => {
+const EventTimer: React.FC<Global.Event> = ({name, expires}) => {
     const { days, hours, minutes, seconds } = useTimeTill(expires);
 
     return(

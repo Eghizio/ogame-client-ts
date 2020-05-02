@@ -1,9 +1,9 @@
 import React from 'react';
 // import './Sprite.css';
-import { ISprite } from "../types/global";
+import Global from "../types/global";
 
 
-const Sprite: React.FC<ISprite> = ({src, position, width, height}) => {
+const Sprite: React.FC<Global.Sprite> = ({src, position, width, height}) => {
     return (
         <div
         style={{

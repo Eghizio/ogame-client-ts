@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from "../providers/GlobalProvider"
 import Sprite from '../components/Sprite';
-import { SpriteMap } from '../types/global';
+import Global from '../types/global';
 
 
 export interface OverviewProps{
@@ -13,7 +13,7 @@ const Overview: React.FC<OverviewProps> = (props) => {
     const context = useContext(GlobalContext);
 
     //seems like my API mismatches spriting groups, need to map with caution, im considering restructuring api to match spriting groups
-    const renderSprites = (cdnResource: SpriteMap) => {
+    const renderSprites = (cdnResource: Global.SpriteMap) => {
         const keys = Array.from(cdnResource.keys());
         const sprites = keys.map(key => cdnResource.get(key));
         
