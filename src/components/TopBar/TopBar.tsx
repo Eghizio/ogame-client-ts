@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from "./Logo";
-import Resources from "./ResourcesBar";
-import Officers from "./Officers";
+import ResourceBar from "./ResourceBar";
+import OfficersBar from "./OfficersBar";
 
 export interface TopBarProps{
 
@@ -11,8 +11,8 @@ const TopBar: React.FC<TopBarProps> = (props) => {
     return (
         <div style={styles.container}>
             <Logo/>
-            <Resources/>
-            <Officers/>
+            <ResourceBar/>
+            <OfficersBar/>
         </div>
     );
 };
