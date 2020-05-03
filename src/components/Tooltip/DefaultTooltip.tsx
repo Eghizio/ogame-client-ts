@@ -11,8 +11,9 @@ export interface DefaultTooltipProps{
 const DefaultTooltip: React.FC<DefaultTooltipProps> = ({position, name, content, style}) => {
     return (
         <div className={`tooltip-body-default tooltip-body-${position}`} style={style}>
-            <h4>{name || "Name"}</h4>
+            <h3>{name || "Name"}</h3>
             <p>{content || "Content"}</p>
+            <div className={`arrow-${position}`}/>
         </div>
     );
 };

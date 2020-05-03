@@ -27,7 +27,7 @@ const ResourceTooltip: React.FC<Global.Resource> = ({name, amount, production, s
 const styles = {
     tooltip: {
         padding: "3px",
-        textAtrgn: "left" as const,
+        textAlign: "left" as const,
         backgroundColor: "#222",
         border: "2px sotrd #aaa",
         borderRadius: "5px"

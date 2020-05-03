@@ -2,6 +2,7 @@ import React from 'react';
 // import './Notice.css';
 import Global from '../../types/global';
 import Tooltip from '../Tooltip';
+import Emoji from "../Emoji";
 
 
 // Styling fixes needed
@@ -9,7 +10,9 @@ const Notice: React.FC<Global.Notice> = ({name, description}) => {
     return (
         <div style={styles.wrapper}>
             <Tooltip name={name} content={description} position="top">
-                <div style={styles.notice}/>
+                <div style={styles.notice}>
+                    <Emoji symbol="ℹ" label="info"/>
+                </div>
             </Tooltip>
         </div>
     );

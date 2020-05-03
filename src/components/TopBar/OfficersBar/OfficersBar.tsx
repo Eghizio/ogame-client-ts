@@ -5,15 +5,15 @@ import Global from '../../../types/global';
 
 
 const OfficersBar: React.FC = () => {
-    const playerClasses: Global.PlayerClass[] = ["Miner", "Warrior", "Explorer"];
     const officers: Global.Officer[] = ["Commander", "Admiral", "Engineer", "Geologist", "Technocrat"];
 
     // for testing
-    const randomClass = playerClasses[ Math.floor( Math.random()*playerClasses.length ) ];
+    // const playerClasses: Global.PlayerClass[] = ["Miner", "Warrior", "Explorer"];
+    // const randomClass = playerClasses[ Math.floor( Math.random()*playerClasses.length ) ];
 
     return (
         <div style={styles.officersBar}>
-            <PlayerClass name={randomClass}/>
+            <PlayerClass name="Miner"/>
             <div style={styles.officers}>
                 {officers.map(officer => <Officer key={officer} name={officer} />)}
             </div>

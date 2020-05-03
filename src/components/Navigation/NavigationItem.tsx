@@ -14,9 +14,7 @@ const NavigationItem: React.FC<Global.NavItem> = ({name, icon}) => {
             </Link>
             <Link style={styles.link} to={`/${name.toLowerCase()}/alt`}>
                 <div style={styles.alt}>
-                    <Emoji label="Alt">
-                        {icon !== "" ? icon : "ℹ️"}
-                    </Emoji>
+                    <Emoji symbol={icon ? icon : "ℹ️"} label="Alt" />
                 </div>
             </Link>
         </li>

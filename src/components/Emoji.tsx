@@ -1,13 +1,13 @@
 import React from 'react';
 
 export interface EmojiProps{
-    children: string;
+    symbol: string
     label?: string;
 }
 
-const Emoji: React.FC<EmojiProps> = ({children:emoji, label}) => 
-    <span role="img" aria-label={label||"Emoji"}> 
-        {emoji} 
+const Emoji: React.FC<EmojiProps> = ({symbol, label}) => 
+    <span role="img" aria-label={`${label} emoji`}> 
+        {symbol}
     </span>
 
 export default Emoji;

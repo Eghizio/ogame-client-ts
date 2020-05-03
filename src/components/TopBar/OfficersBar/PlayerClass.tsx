@@ -4,6 +4,7 @@ import getProperty from "../../../utils/getProperty";
 import { GlobalContext } from "../../../providers/GlobalProvider";
 import Sprite from "../../Sprite";
 import Tooltip from "../../Tooltip";
+import { Link } from "react-router-dom";
 
 export interface PlayerClassProps {
     name: Global.PlayerClass
@@ -17,13 +18,22 @@ const PlayerClass: React.FC<PlayerClassProps> = ({name}) => {
     const classCDN = getProperty(context.cdn.classes, name.toLowerCase());
 
     return (
-        <Tooltip position="bottom">
-            {classCDN && <Sprite src={classCDN.src} {...classCDN} style={styles.playerClass}/>}
-        </Tooltip>
+        <Link style={styles.link} to="/shop">
+            <Tooltip position="bottom" name={name} content={`${name} is a powerful class!`} style={styles.tooltip}>
+                {classCDN && <Sprite src={classCDN.src} {...classCDN} style={styles.playerClass}/>}
+            </Tooltip>
+        </Link>
     );
 };
 
 const styles = {
+    link: {
+        textDecoration: "none",
+        color: "inherit"
+    },
+    tooltip: {
+        width: "150px"
+    },
     playerClass: {
         backgroundSize: "cover",
         margin: "0 5px"

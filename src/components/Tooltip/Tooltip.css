@@ -1,3 +1,8 @@
+:root{
+    --tooltip-bg-color: #222;
+    --tooltip-margin: 7px;
+}
+
 .tooltip-container{
     position: relative;
     display: inline-flex;
@@ -9,6 +14,7 @@
     position: absolute;
     z-index: 10;
     bottom: 125%;
+    margin-bottom: var(--tooltip-margin);
     left: 50%;
     transform: translateX(-50%);
 }
@@ -17,6 +23,7 @@
     position: absolute;
     z-index: 10;
     top: 125%;
+    margin-top: var(--tooltip-margin);
     left: 50%;
     transform: translateX(-50%);
 }
@@ -25,6 +32,7 @@
     position: absolute;
     z-index: 10;
     right: 125%;
+    margin-right: var(--tooltip-margin);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -33,6 +41,7 @@
     position: absolute;
     z-index: 10;
     left: 125%;
+    margin-left: var(--tooltip-margin);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -40,8 +49,7 @@
 .tooltip-body-default{
     position: absolute;
     z-index: 10;
-    /* max-width: 180px; */
-    background-color: #43464D; /* #282c34 */
+    background-color: var(--tooltip-bg-color);
     padding: 2px;
     border-radius: 4px;
 }
@@ -50,3 +58,47 @@
     margin: 0;
     padding: 2px;
 }
+
+.tooltip-body-top::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--tooltip-bg-color) transparent transparent transparent;
+}
+
+.tooltip-body-bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--tooltip-bg-color) transparent;
+  }
+
+.tooltip-body-right::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; 
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent var(--tooltip-bg-color) transparent transparent;
+}
+
+.tooltip-body-left::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--tooltip-bg-color);
+  }

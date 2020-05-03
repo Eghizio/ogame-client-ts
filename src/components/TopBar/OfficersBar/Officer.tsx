@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../../providers/GlobalProvider";
-import Sprite from "../../Sprite";
 import Global from "../../../types/global";
+import Sprite from "../../Sprite";
 import Tooltip from "../../Tooltip";
+import OfficerTooltip from "./OfficerTooltip";
+import { Link } from "react-router-dom";
 
 export interface OfficerProps {
     name: Global.Officer
@@ -16,13 +18,19 @@ const Officer: React.FC<OfficerProps> = ({name}) => {
     const officerCDN = context.cdn.officers[name.toLowerCase()];
 
     return (
-        <Tooltip position="bottom">
-            {officerCDN && <Sprite src={officerCDN.src} {...officerCDN} style={styles.officer}/>}
-        </Tooltip>
+        <Link style={styles.link} to="/shop">
+            <Tooltip position="bottom" tooltip={<OfficerTooltip name={name} />}>
+                {officerCDN && <Sprite src={officerCDN.src} {...officerCDN} style={styles.officer}/>}
+            </Tooltip>
+        </Link>
     );
 };
 
 const styles = {
+    link: {
+        textDecoration: "none",
+        color: "inherit"
+    },
     officer: {
         margin: "0 5px"
     }

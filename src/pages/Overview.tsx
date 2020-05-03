@@ -43,7 +43,7 @@ const styles = {
         height: "50vh",
         background: "lightgray",
         // temp
-        overflow: "scroll"
+        overflow: "auto"
     }
 };
 
