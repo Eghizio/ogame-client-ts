@@ -6,24 +6,32 @@
 }
 
 .tooltip-body-top{
+    position: absolute;
+    z-index: 10;
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .tooltip-body-bottom{
+    position: absolute;
+    z-index: 10;
     top: 125%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .tooltip-body-left{
+    position: absolute;
+    z-index: 10;
     right: 125%;
     top: 50%;
     transform: translateY(-50%);
 }
 
 .tooltip-body-right{
+    position: absolute;
+    z-index: 10;
     left: 125%;
     top: 50%;
     transform: translateY(-50%);

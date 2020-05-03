@@ -147,7 +147,17 @@ declare namespace Global {
         usage: number //can be calculated, usage = production - amount
     }
 
-    export type Resource = Required<BaseResource> & Partial<MineableResource | Antimatter | Energy>
+    // export type Resource = Required<BaseResource> & Partial<MineableResource | Antimatter | Energy>
+    export interface Resource{
+        name: string
+        amount: number
+        production?: number
+        storage?: number
+        shelter?: number //can be calculated, shelter = 24*production* shelter_level(1-10+)%
+        bought?: number
+        found?: number
+        usage?: number //can be calculated, usage = production - amount
+    }
 
     export type PlayerClass = "Miner" | "Warrior" | "Explorer"
 
