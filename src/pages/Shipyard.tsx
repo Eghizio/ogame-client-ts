@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 export interface ShipyardProps{
 
@@ -6,10 +7,10 @@ export interface ShipyardProps{
 
 const Shipyard: React.FC<ShipyardProps> = (props) => {
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Shipyard</h1>
             <div style={styles.content}></div>
-        </main>
+        </Page>
     );
 };
 

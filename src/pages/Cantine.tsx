@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 export interface CantineProps{
 
@@ -6,10 +7,10 @@ export interface CantineProps{
 
 const Cantine: React.FC<CantineProps> = (props) => {
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Cantine</h1>
             <div style={styles.content}></div>
-        </main>
+        </Page>
     );
 };
 

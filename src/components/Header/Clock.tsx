@@ -6,7 +6,7 @@ export interface ClockProps{
 }
 
 const Clock: React.FC<ClockProps> = ({style}) => {
-    const [time, setTime] = useState<string>("");
+    const [time, setTime] = useState<string>("03.05.2020 21:37:00");
     useEffect(() => {
         const interval = setInterval(() => {
             const date = new Date();

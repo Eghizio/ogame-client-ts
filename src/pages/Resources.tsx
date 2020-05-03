@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 export interface ResourcesProps{
 
@@ -6,10 +7,10 @@ export interface ResourcesProps{
 
 const Resources: React.FC<ResourcesProps> = (props) => {
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Resources</h1>
             <div style={styles.content}></div>
-        </main>
+        </Page>
     );
 };
 

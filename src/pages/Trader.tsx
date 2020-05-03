@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 export interface TraderProps{
 
@@ -6,10 +7,10 @@ export interface TraderProps{
 
 const Trader: React.FC<TraderProps> = (props) => {
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Trader</h1>
             <div style={styles.content}></div>
-        </main>
+        </Page>
     );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 export interface FleetProps{
 
@@ -6,10 +7,10 @@ export interface FleetProps{
 
 const Fleet: React.FC<FleetProps> = (props) => {
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Fleet</h1>  
             <div style={styles.content}></div>
-        </main>
+        </Page>
     );
 };
 

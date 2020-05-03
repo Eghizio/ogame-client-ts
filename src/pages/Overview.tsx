@@ -3,6 +3,8 @@ import { GlobalContext } from "../providers/GlobalProvider"
 import Sprite from '../components/Sprite';
 import Global from '../types/global';
 
+import Page from './Page';
+
 
 export interface OverviewProps{
 
@@ -21,7 +23,7 @@ const Overview: React.FC<OverviewProps> = (props) => {
     };
     
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Overview</h1>
             <div style={styles.content}>
                 {context && renderSprites(context.cdn.buildings)}
@@ -29,7 +31,7 @@ const Overview: React.FC<OverviewProps> = (props) => {
                 {context && renderSprites(context.cdn.ships)}
                 {context && renderSprites(context.cdn.defense)}
             </div>
-        </main>
+        </Page>
     );
 };
 

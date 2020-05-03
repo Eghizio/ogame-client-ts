@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 export interface ResearchProps{
 
@@ -6,10 +7,10 @@ export interface ResearchProps{
 
 const Research: React.FC<ResearchProps> = (props) => {
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Research</h1>
             <div style={styles.content}></div>
-        </main>
+        </Page>
     );
 };
 

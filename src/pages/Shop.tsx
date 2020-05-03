@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 export interface ShopProps{
 
@@ -6,10 +7,10 @@ export interface ShopProps{
 
 const Shop: React.FC<ShopProps> = (props) => {
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Shop</h1>
             <div style={styles.content}></div>
-        </main>
+        </Page>
     );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 export interface AllianceProps{
 
@@ -6,10 +7,10 @@ export interface AllianceProps{
 
 const Alliance: React.FC<AllianceProps> = (props) => {
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Alliance</h1>
             <div style={styles.content}></div>
-        </main>
+        </Page>
     );
 };
 

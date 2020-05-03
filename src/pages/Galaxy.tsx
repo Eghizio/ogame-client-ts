@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 export interface GalaxyProps{
 
@@ -6,10 +7,10 @@ export interface GalaxyProps{
 
 const Galaxy: React.FC<GalaxyProps> = (props) => {
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Galaxy</h1>
             <div style={styles.content}></div>
-        </main>
+        </Page>
     );
 };
 

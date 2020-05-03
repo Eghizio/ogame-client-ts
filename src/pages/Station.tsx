@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 export interface StationProps{
 
@@ -6,10 +7,10 @@ export interface StationProps{
 
 const Station: React.FC<StationProps> = (props) => {
     return(
-        <main>
+        <Page>
             <h1 style={styles.header}>Station</h1>       
             <div style={styles.content}></div>
-        </main>
+        </Page>
     );
 };
 
