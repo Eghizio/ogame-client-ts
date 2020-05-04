@@ -19,7 +19,7 @@ const Clock: React.FC<ClockProps> = ({style}) => {
             const minutes = date.getMinutes().toString().padStart(2, "0");
             const seconds = date.getSeconds().toString().padStart(2, "0");
 
-            setTime(`${day}.${month}.${year}\t${hours}:${minutes}:${seconds}`);
+            setTime(`${day}.${month}.${year} ${hours}:${minutes}:${seconds}`);
         },1000);
         
         return () => clearInterval(interval);
