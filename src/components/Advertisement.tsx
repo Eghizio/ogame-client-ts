@@ -23,7 +23,7 @@ const styles = {
     link: {
         textDecoration: "none",
         color: "white",
-        padding: "20px"
+        padding: "10px"
     }
 };
 

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Planet from './Planet';
 import { GlobalContext } from '../../providers/GlobalProvider';
 
-
+// Need to fix paddings/margins on side components
 const PlanetBar: React.FC = () => {
     const context = useContext(GlobalContext);
 
@@ -19,7 +19,9 @@ const PlanetBar: React.FC = () => {
 const styles = {
     aside: {
         width: "120px",
-        padding: "15px",
+        paddingLeft: "30px",
+        paddingRight: "15px",
+        paddingTop: "20px",
         textAlign: "center" as const,
     },
     colonised: {

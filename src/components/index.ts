@@ -6,3 +6,4 @@ export { default as Advertisement } from "./Advertisement";
 export { default as Emoji } from "./Emoji";
 export { default as Sprite } from "./Sprite";
 export { default as Tooltip } from "./Tooltip";
+export { default as QueueBar } from "./QueueBar";

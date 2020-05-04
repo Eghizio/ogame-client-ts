@@ -4,6 +4,7 @@ import Sprite from '../components/Sprite';
 import Global from '../types/global';
 
 import Page from './Page';
+import { QueueBar } from '../components';
 
 
 export interface OverviewProps{
@@ -31,6 +32,7 @@ const Overview: React.FC<OverviewProps> = (props) => {
                 {context && renderSprites(context.cdn.ships)}
                 {context && renderSprites(context.cdn.defense)}
             </div>
+            <QueueBar/>
         </Page>
     );
 };
@@ -41,7 +43,7 @@ const styles = {
         color: "white"
     },
     content: {
-        width: "95%",
+        width: "100%",
         height: "50vh",
         background: "lightgray",
         // temp
