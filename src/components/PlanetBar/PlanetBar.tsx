@@ -19,9 +19,7 @@ const PlanetBar: React.FC = () => {
 const styles = {
     aside: {
         width: "120px",
-        paddingLeft: "30px",
-        paddingRight: "15px",
-        paddingTop: "20px",
+        padding: "20px 25px",
         textAlign: "center" as const,
     },
     colonised: {

@@ -9,7 +9,7 @@ export interface PageProps{
 }
 
 // Page Layout
-const Page: React.FC<PageProps> = ({style, children}) => {
+const Page: React.FC<PageProps> = ({children, style}) => {
     return (
         <GlobalProvider>
             <div style={styles.page}>
@@ -35,13 +35,14 @@ const styles = {
         width: "100vw",
         height: "100vh",
         background: "#282c34",
-        color: "#61dafb"
+        color: "#61dafb",
+        overflow: "auto"
     },
     middle: {
         display: "inline-flex",
     },
     main: {
-        width: "60vw"
+        width: "55vw"
     }
 };
 

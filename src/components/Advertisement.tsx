@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { GlobalContext } from '../providers/GlobalProvider';
+import { Link } from 'react-router-dom';
+import Sprite from './Sprite';
 
 
 const Advertisement: React.FC = () => {
@@ -9,7 +10,7 @@ const Advertisement: React.FC = () => {
     if(!context) return null;
     return (
         <Link style={styles.link} to={context.data.advertisement.href}>
-            <img style={styles.img}src={context.data.advertisement.bannerURL} alt="Advertisement"/>
+            <Sprite src={context.data.advertisement.bannerURL} width="120px" height="600px"/>
         </Link>
     );
 };
@@ -23,7 +24,7 @@ const styles = {
     link: {
         textDecoration: "none",
         color: "white",
-        padding: "10px"
+        padding: "5px"
     }
 };
 
