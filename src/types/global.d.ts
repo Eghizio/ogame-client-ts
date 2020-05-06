@@ -37,6 +37,7 @@ declare namespace Global {
 
     export interface Classes{
         [key: string]: Sprite
+        none: Sprite
         miner: Sprite
         warrior: Sprite
         explorer: Sprite
