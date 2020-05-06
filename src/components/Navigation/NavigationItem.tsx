@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Global from "../../types/global";
 import { Link } from 'react-router-dom';
 import Emoji from "../Emoji";
 
 
 const NavigationItem: React.FC<Global.NavItem> = ({name, icon}) => {
+    const [mainHover, setMainHover] = useState<boolean>(false);
+    const [altHover, setAltHover] = useState<boolean>(false); 
+
     return(
         <li style={styles.li}>
-            <Link style={styles.link} to={`/${name.toLowerCase()}`}>
-                <div style={styles.primary}>
+            <Link style={styles.link} to={`/${name.toLowerCase()}`} onMouseEnter={() => setMainHover(true)} onMouseLeave={() => setMainHover(false)}>
+                <div style={{...styles.primary, ...(mainHover && styles.hovered)}}>
                     {name}
                 </div>
             </Link>
-            <Link style={styles.link} to={`/${name.toLowerCase()}/alt`}>
-                <div style={styles.alt}>
-                    <Emoji symbol={icon ? icon : "ℹ️"} label="Alt" />
+            <Link style={styles.link} to={`/${name.toLowerCase()}/alt`} onMouseEnter={() => setAltHover(true)} onMouseLeave={() => setAltHover(false)}>
+                <div style={{...styles.alt, ...(altHover && styles.hovered)}}>
+                    <Emoji symbol={icon ? icon : "ℹ️"} label={`alternative ${name}`} />
                 </div>
             </Link>
         </li>
@@ -49,8 +52,11 @@ const styles = {
         textAlign: 'center' as const,
         verticalAlign: "middle",
         lineHeight: "30px"
+    },
+    hovered: {
+        backgroundColor: "#b8bdb5",
+        color: "#222"
     }
 };
 
 export default NavigationItem;
-

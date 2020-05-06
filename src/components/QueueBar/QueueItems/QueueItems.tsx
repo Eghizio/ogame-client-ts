@@ -4,6 +4,7 @@ import NextItem from './NextItem';
 import CurrentItem from "./CurrentItem";
 
 // will move that to ./types
+//needs some queue id
 export interface QueueItem{
     name: string
     nextLevel: number
@@ -22,7 +23,7 @@ const QueueItems: React.FC<QueueItemProps> = ({items}) => {
         <div>
             <CurrentItem item={currentItem}/>
             <div style={styles.queueContainer}>
-                {inQueue && inQueue.map(item => <NextItem item={item}/>)}
+                {inQueue && inQueue.map(item => <NextItem key={item.name+item.nextLevel} item={item}/>)}
             </div>
         </div>
     );
