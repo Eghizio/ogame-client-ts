@@ -44,7 +44,9 @@ declare namespace Global {
     }
 
     export interface Icons{
+        [key: string]: Sprite
         adviceNotification: Sprite
+        vacation: Sprite
     }
 
     export interface Sprite{

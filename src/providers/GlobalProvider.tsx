@@ -143,13 +143,13 @@ const initializeGlobalState = () => {
                     width: "40px",
                     height: "40px"
                 },
-                warrior: { // placeholder src
+                warrior: {
                     src: "https://gf3.geo.gfsrv.net/cdn2b/4820e3768f76849d1faa718d57b09e.png", // https://s167-pl.ogame.gameforge.com/cdn/img/mco/characterclasses/warrior_200.png
                     position: "0px 0px",
                     width: "40px",
                     height: "40px"
                 },
-                explorer: { // placeholder src
+                explorer: {
                     src: "https://gf3.geo.gfsrv.net/cdn58/a7226db4268e3c22d65a3fbd936975.png", // https://s167-pl.ogame.gameforge.com/cdn/img/mco/characterclasses/explorer_200.png
                     position: "0px 0px",
                     width: "40px",
