@@ -159,6 +159,9 @@ const initializeGlobalState = () => {
             icons: {
                 adviceNotification: {
                     src: "https://gf3.geo.gfsrv.net/cdne4/d386882e5c67089b9b61de50acf88d.gif"
+                },
+                vacation: {
+                    src: "https://gf2.geo.gfsrv.net/cdnaa/992972c34e4757cd146f4358360c02.gif"
                 }
             }
         },
