@@ -1,0 +1,20 @@
+:root{
+    --modal-width: 500px;
+    --modal-height: 500px;
+}
+
+.modal-container{
+    position: absolute;
+    z-index: 5;
+
+    /* temp */
+    color: red;
+    background-color: #222;
+    border-radius: 5px;
+    border: 1px solid gold;
+
+    width: var(--modal-width);
+    height: var(--modal-height);
+    top: calc(50% - var(--modal-height)*0.5);
+    left: calc(50% - var(--modal-width)*0.5);
+}

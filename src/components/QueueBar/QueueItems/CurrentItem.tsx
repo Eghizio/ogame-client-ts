@@ -38,7 +38,7 @@ const CurrentItem: React.FC<CurrentItemProps> = ({item}) => {
             <h4 style={styles.header}>{item.name}</h4>
             <div style={styles.current}>
                 <Sprite src={MetalMineSprite!.src} width="50px" height="50px" style={styles.currentSprite}>
-                    <div style={styles.currentCancel} onClick={cancelItem}>
+                    <div style={styles.currentCancel} onClick={cancelItem} title="Cancel">
                         <Emoji symbol="✖️" label="cancel cross"/>
                     </div>
                 </Sprite>

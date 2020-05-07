@@ -1,7 +1,8 @@
-import React from 'react';
-
-import Page from './Page';
-import { QueueBar } from '../components';
+import React from "react";
+import Page from "./Page";
+import { QueueBar } from "../components";
+// eslint-disable-next-line
+import Modal from "../components/Modal";
 
 
 export interface OverviewProps{
@@ -10,11 +11,14 @@ export interface OverviewProps{
 
 // Testing sprites
 const Overview: React.FC<OverviewProps> = (props) => {
+    const [showModal, setShowModal] = React.useState<boolean>(false);
+
     return(
         <Page>
             <h1 style={styles.header}>Overview</h1>
             <div style={styles.content}>
-                stuff
+                <button onClick={() => setShowModal(true)}>Open Modal</button>
+                <Modal isOpened={showModal} handleClose={() => setShowModal(false)}/>
             </div>
             <QueueBar/>
         </Page>
