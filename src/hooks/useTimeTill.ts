@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 
-export interface Time{
+export interface TimeTill{
     days: string
     hours: string
     minutes: string
     seconds: string
 }
 
-const useTimeTill = (endDate: Date): Time => {
-    const [timeTill, setTimeTill] = useState<Time>({ days: "00", hours: "00", minutes: "00", seconds: "00" });
+const useTimeTill = (endDate: Date): TimeTill => {
+    const [timeTill, setTimeTill] = useState<TimeTill>({ days: "00", hours: "00", minutes: "00", seconds: "00" });
 
     useEffect(() => {
         const interval = setInterval(() => {

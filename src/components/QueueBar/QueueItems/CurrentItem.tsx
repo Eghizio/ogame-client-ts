@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 // import './CurrentItem.css';
 import { GlobalContext } from '../../../providers/GlobalProvider';
+import useCountdown from "../../../hooks/useCountdown";
+import parseTime, { Time } from "../../../utils/parseTime";
 import Sprite from '../../Sprite';
 import Emoji from '../../Emoji';
 
@@ -10,28 +12,14 @@ export interface CurrentItemProps{
     item: QueueItem
 }
 
-// ❌✖️
 const CurrentItem: React.FC<CurrentItemProps> = ({item}) => {
     const context = useContext(GlobalContext);
-    
-    const parseTime = (timestamp: number): string => { //temp, change it into hook in decoupled component to timer down
-        // const counter = new Date(Date.now()+timestamp).getTime() // - Date.now()
-        // change useTimeTill to return numbers, EventTimer own parsing.
-        // console.log(counter, timestamp)
+    const buildTimeLeft = useCountdown(item.buildTime);
+    const buildTime = parseTime(buildTimeLeft);
 
-        let d, h, m, s; //need to add weeks. maybe use moment.js ?
-        
-        s = Math.floor(timestamp / 1000);
-        m = Math.floor(s / 60);
-        s = s % 60;
-        h = Math.floor(m / 60);
-        m = m % 60;
-        d = Math.floor(h / 24);
-        h = h % 24;
+    const formatTime = (time: Time): string => {
+        const parsedTime = Object.entries(time).reduce((acc, t) => acc + (t[1] ? `${t[1]+t[0].charAt(0)}. ` : ""), "");
 
-        const parsedTime = Object.entries({d, h, m, s}).reduce((acc, t) => acc + (t[1] ? `${t[1]+t[0]}. ` : ""), "");
-
-        console.log(parsedTime)
         return parsedTime;
     };
 
@@ -60,7 +48,9 @@ const CurrentItem: React.FC<CurrentItemProps> = ({item}) => {
                     </div>
                     <div style={styles.infoTime}>
                         Build time: <br/>
-                        <span style={styles.highlight}>{parseTime(item.buildTime)}</span>
+                        <span style={styles.highlight}>
+                            {formatTime(buildTime)}
+                        </span>
                     </div>
                 </div>
             </div>
