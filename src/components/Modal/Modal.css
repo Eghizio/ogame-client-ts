@@ -9,9 +9,10 @@
 
     /* temp */
     color: red;
-    background-color: #222;
+    background-color: #aaa;
     border-radius: 5px;
     border: 1px solid gold;
+    /* transform-origin: calc(50% - var(--modal-height)*0.5) calc(50% - var(--modal-width)*0.5); */
 
     width: var(--modal-width);
     height: var(--modal-height);
