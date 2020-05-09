@@ -10,7 +10,7 @@ export interface TooltipProps extends DefaultTooltipProps{
 }
 
 
-// Implement css arrow based on position?
+// Implement with Portal?
 const Tooltip: React.FC<TooltipProps> = ({children, position, tooltip, name, content, style}) => {
     const [isHovered, setIsHovered] = useState<boolean>(false);
 
