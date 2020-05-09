@@ -9,3 +9,4 @@ export { default as Tooltip } from "./Tooltip";
 export { default as QueueBar } from "./QueueBar";
 export { default as Modal } from "./Modal";
 export { default as Footer } from "./Footer";
+export { default as TechnologyGrid } from "./TechnologyGrid";

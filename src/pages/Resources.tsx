@@ -1,6 +1,6 @@
 import React from 'react';
 import Page from './Page';
-import { QueueBar } from '../components';
+import { QueueBar, TechnologyGrid } from '../components';
 
 export interface ResourcesProps{
 
@@ -11,7 +11,7 @@ const Resources: React.FC<ResourcesProps> = (props) => {
         <Page>
             <h1 style={styles.header}>Resources</h1>
             <div style={styles.content}>
-                
+                <TechnologyGrid name="Resource facilities"/>
             </div>
             <QueueBar/>
         </Page>
@@ -24,7 +24,7 @@ const styles = {
         color: "white"
     },
     content: {
-        width: "95%",
+        width: "100%",
         height: "50vh",
         background: "lightgray"
     }
