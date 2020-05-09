@@ -1,5 +1,6 @@
 import React from 'react';
 import Page from './Page';
+import { QueueBar } from '../components';
 
 export interface ResourcesProps{
 
@@ -9,7 +10,10 @@ const Resources: React.FC<ResourcesProps> = (props) => {
     return(
         <Page>
             <h1 style={styles.header}>Resources</h1>
-            <div style={styles.content}></div>
+            <div style={styles.content}>
+                
+            </div>
+            <QueueBar/>
         </Page>
     );
 };

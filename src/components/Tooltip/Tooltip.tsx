@@ -15,7 +15,7 @@ const Tooltip: React.FC<TooltipProps> = ({children, position, tooltip, name, con
     const [isHovered, setIsHovered] = useState<boolean>(false);
 
     return (
-        <div>
+        <div style={styles.tooltip}>
             <div className="tooltip-container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                 {children}
                 {!isHovered ? null : tooltip
@@ -31,7 +31,9 @@ const Tooltip: React.FC<TooltipProps> = ({children, position, tooltip, name, con
 
 // eslint-disable-next-line
 const styles = {
-
+    tooltip: {
+        display: "inline-flex"
+    }
 };
 
 export default Tooltip;
