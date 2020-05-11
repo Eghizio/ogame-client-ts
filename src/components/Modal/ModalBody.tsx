@@ -13,12 +13,6 @@ export interface ModalBodyProps{
 }
 
 const ModalBody: React.FC<ModalBodyProps> = ({isOpened, handleClose, title, style, children}) => {
-    const [modalRoot] = useState(() => {
-        const root = document.createElement("div");
-        root.setAttribute("class", "modal-root");
-        
-        return root;
-    });
     const modalRef = useRef<HTMLDivElement>(null);
     // Drag
     const [isMoving, setIsMoving] = useState<boolean>(false); // maybe reducer?
@@ -32,12 +26,11 @@ const ModalBody: React.FC<ModalBodyProps> = ({isOpened, handleClose, title, styl
 
     useEffect(() => {
         debug("mounted"); // debug
-        document.body.appendChild(modalRoot);
 
         // HERE IS THE PROBLEM
         const clickOutOfModal = (e: MouseEvent) => {
             const clickOutsideModal =  modalRef.current && !modalRef.current.contains(e.target as Node);
-            const clickInsideOtherModal = Array.from(document.querySelectorAll("div.modal-root")).some(modal => modal.contains(e.target as Node));
+            const clickInsideOtherModal = Array.from(document.querySelectorAll("div.modal-container")).some(modal => modal.contains(e.target as Node));
 
             if(clickOutsideModal && !clickInsideOtherModal)
                 handleClose();
@@ -56,10 +49,9 @@ const ModalBody: React.FC<ModalBodyProps> = ({isOpened, handleClose, title, styl
             // setX(0); setY(0);
             document.removeEventListener("click", clickOutOfModal);
             document.removeEventListener("keydown", escapeModal);
-            document.body.removeChild(modalRoot);
             debug("unmounted"); // debug
         };
-    }, [modalRoot, handleClose, debug]); // debug
+    }, [handleClose, debug]); // debug
 
 
     // Drag handling, still displaced a little bit
@@ -107,7 +99,7 @@ const ModalBody: React.FC<ModalBodyProps> = ({isOpened, handleClose, title, styl
                 {children}
             </section>
         </div>
-    , modalRoot);
+    , document.body);
 };
 
 // eslint-disable-next-line

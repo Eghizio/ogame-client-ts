@@ -4,15 +4,18 @@
 }
 
 .modal-container{
-    position: absolute;
     z-index: 5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
     /* temp */
     color: red;
     background-color: #aaa;
     border-radius: 5px;
     border: 1px solid gold;
-    /* transform-origin: calc(50% - var(--modal-height)*0.5) calc(50% - var(--modal-width)*0.5); */
 
     width: var(--modal-width);
     height: var(--modal-height);

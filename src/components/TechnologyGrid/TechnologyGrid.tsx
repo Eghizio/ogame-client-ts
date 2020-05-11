@@ -15,20 +15,23 @@ const TechnologyGrid: React.FC<TechnologyGridProps> = ({name}) => {
     const context = React.useContext(GlobalContext);
     if(!context) return null;
     
-    const buildings = Array.from(context.cdn.buildings.keys()).slice(0,8)
-        .map(key => ({
+    const buildings = Array.from(context.cdn.buildings.keys()).slice(0,12)
+        .map((key, i) => ({
             uuid: id(),
             name: "Something mine",
             currentLevel: Math.floor(Math.random()*29+1),
-            sprite: (context.cdn.buildings.get(key) as Global.Sprite)
+            sprite: (context.cdn.buildings.get(key) as Global.Sprite),
+            meetsRequirements: (i<6), //mock
+            enoughResources: (i<4) //mock
         }));
 
-
     return (
-        <div style={styles.tech}>
-            <h2 style={styles.header}>{name}</h2>
+        <div className="technology-grid" style={styles.tech}>
+            <h2 style={styles.header}>
+                {name}
+            </h2>
             <div style={styles.grid}>
-                {buildings && buildings.map(building => building && <TechnologyGridItem key={building.uuid} {...building}/>)}
+                {buildings && buildings.map(building => building && <TechnologyGridItem key={building.uuid} item={building}/>)}
             </div>
         </div>
     );
@@ -58,7 +61,8 @@ const styles = {
         display: "grid",
         alignItems: "center",
         justifyContent: "space-between",
-        gridTemplateColumns: "repeat(6, 1fr)"
+        gridTemplateColumns: "repeat(6, 1fr)",
+        gap: "5px"
     }
 };
 
